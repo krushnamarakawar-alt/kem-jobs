@@ -82,6 +82,21 @@ document.getElementById("text").innerHTML=
 "UID: "+uid+"<br>Server: "+server+"<br>Status: Demo";
 }
 </script>
+<div id="diamond">💎</div>
+
+<style>
+#diamond{
+ position:fixed;
+ top:20px;
+ right:20px;
+ font-size:35px;
+ animation:float 2s ease-in-out infinite;
+}
+@keyframes float{
+ 0%,100%{transform:translateY(0);}
+ 50%{transform:translateY(-10px);}
+}
+</style>
 
 </body>
 </html>

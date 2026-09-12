@@ -1,27 +1,143 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FF Bot</title>
+<title>FF BOT</title>
 <style>
-body{background:#0b0b0b;color:white;font-family:Arial;text-align:center;padding:30px}
-.box{background:#1a1a1a;padding:20px;border-radius:15px;max-width:350px;margin:auto}
-input,select,button{width:100%;padding:12px;margin:10px 0;border:none;border-radius:10px}
-button{background:#00e5ff;color:black;font-weight:bold}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{
+background:#050505;
+color:#fff;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+overflow:hidden;
+}
+.bg{
+position:fixed;
+width:100%;
+height:100%;
+background:radial-gradient(circle,#0a1b35,#050505);
+z-index:-1;
+}
+.card{
+width:340px;
+background:#111;
+padding:25px;
+border-radius:18px;
+border:1px solid #00e5ff55;
+box-shadow:0 0 25px #00e5ff44;
+text-align:center;
+}
+h1{
+color:#00e5ff;
+margin-bottom:5px;
+text-shadow:0 0 12px #00e5ff;
+}
+p{color:#aaa;margin-bottom:20px}
+input,select{
+width:100%;
+padding:12px;
+margin:8px 0;
+border:none;
+border-radius:10px;
+background:#222;
+color:#fff;
+}
+button{
+width:100%;
+padding:13px;
+margin-top:10px;
+background:#00e5ff;
+color:#000;
+font-weight:bold;
+border:none;
+border-radius:10px;
+cursor:pointer;
+transition:.3s;
+}
+button:hover{
+transform:scale(1.05);
+box-shadow:0 0 20px #00e5ff;
+}
+.loader{
+display:none;
+margin-top:20px;
+}
+.spin{
+width:45px;
+height:45px;
+border:5px solid #333;
+border-top:5px solid #00e5ff;
+border-radius:50%;
+margin:auto;
+animation:spin 1s linear infinite;
+}
+@keyframes spin{
+100%{transform:rotate(360deg)}
+}
+#result{
+display:none;
+margin-top:18px;
+padding:15px;
+border-radius:12px;
+background:#181818;
+border:1px solid #00e5ff55;
+}
 </style>
 </head>
 <body>
-<div class="box">
-<h2>FF Bot</h2>
-<input placeholder="Enter UID">
-<select>
+
+<div class="bg"></div>
+
+<div class="card">
+<h1>FF BOT</h1>
+<p>Gaming Style Demo</p>
+
+<input id="uid" placeholder="Enter UID">
+<select id="server">
 <option>India</option>
 <option>Brazil</option>
 <option>Singapore</option>
+<option>Middle East</option>
 </select>
-<button>Start Scan</button>
-<p>Demo Website</p>
+
+<button onclick="scan()">START SCAN</button>
+
+<div class="loader" id="loader">
+<div class="spin"></div>
+<p>Scanning...</p>
 </div>
+
+<div id="result">
+<h3 style="color:#00e5ff;">Scan Complete</h3>
+<p id="text"></p>
+</div>
+</div>
+
+<script>
+function scan(){
+let uid=document.getElementById("uid").value;
+let server=document.getElementById("server").value;
+
+if(uid==""){
+alert("Enter UID");
+return;
+}
+
+document.getElementById("loader").style.display="block";
+document.getElementById("result").style.display="none";
+
+setTimeout(()=>{
+document.getElementById("loader").style.display="none";
+document.getElementById("result").style.display="block";
+document.getElementById("text").innerHTML=
+"UID: "+uid+"<br>Server: "+server+"<br>Status: Demo Completed";
+},3000);
+}
+</script>
+
 </body>
 </html>

@@ -1,128 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KEM Jobs - Find Hospital Jobs</title>
-<script src="https://cdn.tailwindcss.com"></script>
+<title>FF Bot</title>
+<style>
+body{background:#0b0b0b;color:white;font-family:Arial;text-align:center;padding:30px}
+.box{background:#1a1a1a;padding:20px;border-radius:15px;max-width:350px;margin:auto}
+input,select,button{width:100%;padding:12px;margin:10px 0;border:none;border-radius:10px}
+button{background:#00e5ff;color:black;font-weight:bold}
+</style>
 </head>
-<body class="bg-gray-100">
-
-<header class="bg-blue-700 text-white p-5">
-  <h1 class="text-3xl font-bold">KEM Jobs</h1>
-  <p>Find Hospital Jobs Across India</p>
-</header>
-
-<section class="max-w-6xl mx-auto p-5">
-  <div class="bg-white rounded-2xl shadow p-5">
-    <h2 class="text-2xl font-bold mb-3">Search Jobs</h2>
-    <div class="grid gap-3 md:grid-cols-3">
-      <input id="jobSearch" class="border p-3 rounded-xl" placeholder="Job Title">
-      <input id="citySearch" class="border p-3 rounded-xl" placeholder="City">
-      <button onclick="searchJobs()" class="bg-blue-700 text-white rounded-xl p-3">Search</button>
-    </div>
-  </div>
-
-  <h2 class="text-2xl font-bold mt-8 mb-4">Latest Jobs</h2>
-
-  <div id="jobList" class="grid gap-4 md:grid-cols-3">
-
-    <div class="job bg-white rounded-2xl shadow p-4" data-job="Staff Nurse" data-city="Mumbai">
-      <h3 class="font-bold">Staff Nurse</h3>
-      <p>Mumbai • ₹35,000</p>
-      <a href="#apply-form" class="mt-3 inline-block bg-green-600 text-white px-4 py-2 rounded">Apply Now</a>
-    </div>
-
-    <div class="job bg-white rounded-2xl shadow p-4" data-job="Ward Boy" data-city="Mumbai">
-      <h3 class="font-bold">Ward Boy</h3>
-      <p>Mumbai • ₹20,000</p>
-      <a href="#apply-form" class="mt-3 inline-block bg-green-600 text-white px-4 py-2 rounded">Apply Now</a>
-    </div>
-
-    <div class="job bg-white rounded-2xl shadow p-4" data-job="Data Entry Operator" data-city="Pune">
-      <h3 class="font-bold">Data Entry Operator</h3>
-      <p>Pune • ₹18,000</p>
-      <a href="#apply-form" class="mt-3 inline-block bg-green-600 text-white px-4 py-2 rounded">Apply Now</a>
-    </div>
-
-    <div class="job bg-white rounded-2xl shadow p-4" data-job="Hospital Receptionist" data-city="Mumbai">
-      <h3 class="font-bold">Hospital Receptionist</h3>
-      <p>Mumbai • ₹22,000</p>
-      <a href="#apply-form" class="mt-3 inline-block bg-green-600 text-white px-4 py-2 rounded">Apply Now</a>
-    </div>
-
-    <div class="job bg-white rounded-2xl shadow p-4" data-job="Lab Technician" data-city="Nagpur">
-      <h3 class="font-bold">Lab Technician</h3>
-      <p>Nagpur • ₹28,000</p>
-      <a href="#apply-form" class="mt-3 inline-block bg-green-600 text-white px-4 py-2 rounded">Apply Now</a>
-    </div> 
-  
-<div class="job bg-white rounded-2xl shadow p-4" data-job="ICU Nurse" data-city="Delhi">
-  <h3 class="font-bold">ICU Nurse</h3>
-  <p>Delhi • ₹40,000</p>
-  <a href="#apply-form" class="mt-3 inline-block bg-green-600 text-white px-4 py-2 rounded">Apply Now</a>
+<body>
+<div class="box">
+<h2>FF Bot</h2>
+<input placeholder="Enter UID">
+<select>
+<option>India</option>
+<option>Brazil</option>
+<option>Singapore</option>
+</select>
+<button>Start Scan</button>
+<p>Demo Website</p>
 </div>
-
-<div class="job bg-white rounded-2xl shadow p-4" data-job="Pharmacist" data-city="Pune">
-  <h3 class="font-bold">Pharmacist</h3>
-  <p>Pune • ₹24,000</p>
-  <a href="#apply-form" class="mt-3 inline-block bg-green-600 text-white px-4 py-2 rounded">Apply Now</a>
-</div>
-    <div class="job bg-white rounded-2xl shadow p-4" data-job="Security Guard" data-city="Pune">
-      <h3 class="font-bold">Security Guard</h3>
-      <p>Pune • ₹17,000</p>
-      <a href="#apply-form" class="mt-3 inline-block bg-green-600 text-white px-4 py-2 rounded">Apply Now</a>
-    </div>
-
-  </div>
-</section>
-
-<section id="apply-form" class="max-w-3xl mx-auto p-5">
-  <div class="bg-white rounded-2xl shadow p-5">
-    <h2 class="text-2xl font-bold mb-4">Apply for Job</h2>
-
-    <form action="https://formsubmit.co/920d248b0ce8712afe07d0532f403154" method="POST" enctype="multipart/form-data">
-
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://kem-jobs.vercel.app/">
-
-      <input type="text" name="name" placeholder="Full Name" class="w-full border p-3 rounded mb-3" required>
-
-      <input type="email" name="email" placeholder="Email" class="w-full border p-3 rounded mb-3" required>
-
-      <input type="tel" name="phone" placeholder="Mobile Number" class="w-full border p-3 rounded mb-3" required>
-
-      <input type="file" name="resume" class="w-full border p-3 rounded mb-3" required>
-
-      <button type="submit" class="w-full bg-blue-700 text-white p-3 rounded-xl">
-        Submit Application
-      </button>
-
-    </form>
-  </div>
-</section>
-
-<footer class="bg-gray-900 text-white text-center p-4 mt-10">
-  © 2026 KEM Jobs
-</footer>
-
-<script>
-function searchJobs() {
-  let job = document.getElementById("jobSearch").value.toLowerCase();
-  let city = document.getElementById("citySearch").value.toLowerCase();
-
-  document.querySelectorAll(".job").forEach(card => {
-    let j = card.dataset.job.toLowerCase();
-    let c = card.dataset.city.toLowerCase();
-
-    card.style.display =
-      (j.includes(job) && c.includes(city)) ? "block" : "none";
-  });
-}
-</script>
-<a href="FastVideoDownloaderProject%20(1).zip" download>
-style="background:#2563EB;color:white;padding:14px 24px;border-radius:10px;text-decoration:none;font-weight:bold;">
-📲 Download App
-</a>
 </body>
 </html>

@@ -2,113 +2,142 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FF BOT</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>FF Lobby Demo</title>
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#050505;color:#fff;overflow:hidden}
-#intro{
-position:fixed;inset:0;background:#000;
-display:flex;justify-content:center;align-items:center;
-flex-direction:column;z-index:999;
-animation:hide 3s forwards;
+body{
+background:#050505;
+color:white;
+overflow-x:hidden;
+background:radial-gradient(circle at top,#003b66,#050505);
 }
-#intro h1{color:#00e5ff;font-size:40px;text-shadow:0 0 20px #00e5ff}
-@keyframes hide{0%,80%{opacity:1}100%{opacity:0;visibility:hidden}}
 
-.main{
-display:flex;justify-content:center;align-items:center;
-height:100vh;
-background:radial-gradient(circle,#0a1b35,#050505);
+.topbar{
+position:fixed;
+top:12px;
+left:12px;
+right:12px;
+display:flex;
+justify-content:space-between;
+font-size:18px;
+font-weight:bold;
+color:#00e5ff;
+z-index:10;
 }
+
+.hero{
+padding-top:60px;
+text-align:center;
+}
+
+.avatar{
+width:170px;
+height:170px;
+margin:auto;
+border-radius:50%;
+border:3px solid #00e5ff;
+box-shadow:0 0 25px #00e5ff;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:70px;
+animation:float 2s infinite ease-in-out;
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-10px)}
+}
+
 .card{
-width:340px;background:#111;padding:25px;border-radius:20px;
-box-shadow:0 0 25px #00e5ff55;text-align:center;
+width:92%;
+max-width:360px;
+margin:20px auto;
+background:#111;
+padding:20px;
+border-radius:20px;
+box-shadow:0 0 20px #00e5ff55;
 }
-h2{color:#00e5ff;margin-bottom:10px}
+
 input,select,button{
-width:100%;padding:12px;margin:10px 0;border:none;border-radius:10px;
+width:100%;
+padding:12px;
+margin:10px 0;
+border:none;
+border-radius:10px;
 }
-input,select{background:#222;color:#fff}
+
+input,select{
+background:#222;
+color:white;
+}
+
 button{
-background:#00e5ff;color:#000;font-weight:bold;
+background:#00e5ff;
+color:black;
+font-weight:bold;
 box-shadow:0 0 15px #00e5ff;
 }
-button:active{transform:scale(.97)}
-#result{display:none;margin-top:15px}
+
+.weapons{
+padding:20px;
+}
+
+.weapon{
+background:#111;
+padding:12px;
+margin:10px 0;
+border-radius:12px;
+border:1px solid #00e5ff55;
+display:flex;
+justify-content:space-between;
+}
 </style>
 </head>
+
 <body>
 
-<div id="intro">
-<h1>FF BOT</h1>
-<p>Loading...</p>
+<div class="topbar">
+<span>💎99999</span>
+<span>🪙999999</span>
 </div>
 
-<div class="main">
+<div class="hero">
+<div class="avatar">🎮</div>
+<h1 style="color:#00e5ff;margin-top:15px;">FF LOBBY DEMO</h1>
+</div>
+
 <div class="card">
- <div class="topbar">
-  <span>💎 99999</span>
-  <span>🪙 999999</span>
- </div>
-<h2>🔥 FF BOT PREMIUM</h2>
-
-<input id="uid" placeholder="Enter UID">
-
-<select id="server">
+<input placeholder="Enter UID">
+<select>
 <option>India</option>
 <option>Brazil</option>
 <option>Singapore</option>
-<option>Middle East</option>
 </select>
+<button>START</button>
+</div>
 
-<button onclick="scan()">START SCAN</button>
+<div class="weapons">
+<h2 style="color:#00e5ff;">Popular Weapons</h2>
 
-<div id="result">
-<h3>✅ Scan Complete</h3>
-<p id="text"></p>
+<div class="weapon">
+<span>🔫 AK47</span>
+<span>Epic</span>
+</div>
+
+<div class="weapon">
+<span>⚡ MP40</span>
+<span>Legendary</span>
+</div>
+
+<div class="weapon">
+<span>🎯 M1887</span>
+<span>Mythic</span>
 </div>
 
 </div>
-</div>
-
-<script>
-function scan(){
-let uid=document.getElementById("uid").value;
-let server=document.getElementById("server").value;
-
-if(uid==""){
-alert("UID dalo");
-return;
-}
-document.getElementById("result").style.display="block";
-document.getElementById("text").innerHTML=
-"UID: "+uid+"<br>Server: "+server+"<br>Status: Demo";
-}
-</script>
-<div id="diamond">💎</div>
-
-<style>
-#diamond{
- position:fixed;
- top:20px;
- right:20px;
- font-size:35px;
- animation:float 2s ease-in-out infinite;
-}
-@keyframes float{
- 0%,100%{transform:translateY(0);}
- 50%{transform:translateY(-10px);}
-}
- .topbar{
-  display:flex;
-  justify-content:space-between;
-  color:#00e5ff;
-  font-weight:bold;
-  font-size:18px;
-  margin-bottom:15px;
- }
-</style>
 
 </body>
 </html>

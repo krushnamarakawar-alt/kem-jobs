@@ -2,83 +2,307 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FF LOBBY PRO</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>FF LOBBY PRO V2</title>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
 body{
-background:linear-gradient(180deg,#02111f,#000);
+background:radial-gradient(circle at top,#04233f,#000);
 color:#fff;
 overflow-x:hidden;
 }
 #bg{position:fixed;inset:0;z-index:-1}
-.topbar{display:flex;justify-content:space-between;padding:15px;color:#00e5ff;font-size:22px;font-weight:bold;text-shadow:0 0 10px #00e5ff}
+
+.topbar{
+display:flex;
+justify-content:space-between;
+padding:18px;
+font-size:22px;
+font-weight:bold;
+color:#00e5ff;
+text-shadow:0 0 15px #00e5ff;
+}
+
 .profile{text-align:center;padding:20px}
-.gun{font-size:80px;animation:rotateGun 4s linear infinite;filter:drop-shadow(0 0 15px #00e5ff)}
-.avatar{width:170px;height:170px;border:5px solid #00e5ff;border-radius:50%;margin:15px auto;display:flex;align-items:center;justify-content:center;font-size:80px;background:#06284d;box-shadow:0 0 30px #00e5ff}
-.name{font-size:34px;color:#00e5ff;font-weight:bold;text-shadow:0 0 15px #00e5ff}
-.level{max-width:300px;margin:20px auto}
-.bar{height:14px;background:#123;border-radius:20px;overflow:hidden}
-.fill{height:100%;width:75%;background:#00e5ff;box-shadow:0 0 15px #00e5ff}
-.panel{background:#07131f;margin:20px;padding:20px;border-radius:20px;box-shadow:0 0 20px #00e5ff55}
-input,select{width:100%;padding:15px;margin:10px 0;border-radius:12px;border:2px solid #00e5ff;background:#111;color:#fff}
-button{width:100%;padding:15px;background:#00e5ff;color:#000;font-weight:bold;border:none;border-radius:12px;box-shadow:0 0 15px #00e5ff}
-.weapon{display:flex;justify-content:space-between;padding:14px;margin:10px 0;border:1px solid #00e5ff55;border-radius:12px}
-#popup{position:fixed;top:70px;left:50%;transform:translateX(-50%);background:#00e5ff;color:#000;padding:10px 18px;border-radius:10px;font-weight:bold;display:none;box-shadow:0 0 20px #00e5ff}
-@keyframes rotateGun{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+.avatar-ring{
+width:200px;height:200px;
+margin:auto;
+border-radius:50%;
+padding:8px;
+background:linear-gradient(45deg,#00e5ff,#0066ff,#00e5ff);
+animation:spin 8s linear infinite;
+box-shadow:0 0 35px #00e5ff;
+}
+.avatar{
+width:100%;height:100%;
+border-radius:50%;
+background:#051321;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:90px;
+}
+.name{
+font-size:34px;
+margin-top:18px;
+color:#00e5ff;
+font-weight:bold;
+text-shadow:0 0 18px #00e5ff;
+}
+.rank{
+display:inline-block;
+margin-top:10px;
+padding:10px 20px;
+border-radius:25px;
+background:linear-gradient(90deg,#ffd700,#ff7b00);
+color:#000;
+font-weight:bold;
+box-shadow:0 0 20px gold;
+animation:pulse 1.5s infinite;
+}
+
+.level{
+max-width:320px;
+margin:22px auto;
+}
+.bar{
+height:15px;
+background:#123;
+border-radius:20px;
+overflow:hidden;
+}
+.fill{
+height:100%;
+width:82%;
+background:#00e5ff;
+box-shadow:0 0 20px #00e5ff;
+animation:xp 3s infinite alternate;
+}
+
+.panel{
+margin:20px;
+padding:20px;
+border-radius:22px;
+background:rgba(0,0,0,.55);
+border:2px solid #00e5ff;
+box-shadow:0 0 25px #00e5ff55;
+backdrop-filter:blur(8px);
+}
+
+input,select{
+width:100%;
+padding:15px;
+margin:12px 0;
+background:#111;
+color:#fff;
+border:2px solid #00e5ff;
+border-radius:14px;
+}
+
+button{
+width:100%;
+padding:16px;
+border:none;
+border-radius:14px;
+font-size:19px;
+font-weight:bold;
+background:#00e5ff;
+color:#000;
+box-shadow:0 0 22px #00e5ff;
+transition:.3s;
+}
+button:hover{transform:scale(1.03)}
+
+#status{
+display:none;
+margin-top:15px;
+padding:15px;
+border-radius:12px;
+background:#07131f;
+border:1px solid #00e5ff;
+}
+
+.section-title{
+font-size:28px;
+margin-bottom:15px;
+color:#00e5ff;
+}
+
+.weapon{
+display:flex;
+justify-content:space-between;
+padding:14px;
+margin:10px 0;
+border-radius:14px;
+border:1px solid #00e5ff;
+transition:.3s;
+}
+.weapon:hover{
+transform:translateY(-3px);
+box-shadow:0 0 18px #00e5ff;
+}
+
+.rewards{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:12px;
+}
+.reward{
+padding:15px;
+border-radius:16px;
+text-align:center;
+background:#07131f;
+border:1px solid #00e5ff;
+box-shadow:0 0 12px #00e5ff33;
+}
+
+.music{
+position:fixed;
+right:18px;
+bottom:20px;
+width:55px;
+height:55px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:24px;
+background:#00e5ff;
+color:#000;
+box-shadow:0 0 18px #00e5ff;
+}
+
+.footer{
+text-align:center;
+padding:30px;
+color:#00e5ff;
+}
+
+#popup{
+position:fixed;
+top:80px;
+left:50%;
+transform:translateX(-50%);
+background:#00e5ff;
+color:#000;
+padding:12px 22px;
+border-radius:14px;
+font-weight:bold;
+display:none;
+box-shadow:0 0 25px #00e5ff;
+z-index:999;
+}
+
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pulse{50%{transform:scale(1.08)}}
+@keyframes xp{from{width:70%}to{width:95%}}
 </style>
 </head>
 
 <body>
 
 <canvas id="bg"></canvas>
-<div id="popup">WELCOME TO FF LOBBY PRO</div>
+
+<div id="popup">🔥 Welcome to FF Lobby PRO V2</div>
 
 <div class="topbar">
-<div>💎99999</div>
-<div>🪙999999</div>
+<div>💎 99999</div>
+<div>🪙 999999</div>
 </div>
 
 <div class="profile">
-<div class="gun">🔫</div>
+
+<div class="avatar-ring">
 <div class="avatar">🎮</div>
+</div>
+
 <div class="name">FF LOBBY PRO</div>
+<div class="rank">🏆 HEROIC</div>
 
 <div class="level">
 Level 75
-<div class="bar"><div class="fill"></div></div>
+<div class="bar">
+<div class="fill"></div>
 </div>
 </div>
 
+</div>
+
 <div class="panel">
+
+<h2 class="section-title">🎯 Enter Lobby</h2>
+
 <input id="uid" placeholder="Enter UID">
-<select>
+
+<select id="server">
 <option>India</option>
-<option>Brazil</option>
 <option>Singapore</option>
+<option>Brazil</option>
+<option>Europe</option>
 </select>
-<button onclick="scan()">START</button>
-<div id="status" style="display:none;margin-top:15px;text-align:center">
-<h3>✅ Scan Complete</h3>
-<p>Demo Lobby Ready</p>
+
+<button onclick="startDemo()">START</button>
+
+<div id="status">
+<h3>✅ Demo Loaded</h3>
+<p id="info"></p>
 </div>
+
 </div>
 
 <div class="panel">
-<h2 style="color:#00e5ff;margin-bottom:15px">Popular Weapons</h2>
+
+<h2 class="section-title">🔥 Popular Weapons</h2>
+
 <div class="weapon"><span>🔫 AK47</span><span>Epic</span></div>
 <div class="weapon"><span>⚡ MP40</span><span>Legendary</span></div>
 <div class="weapon"><span>🎯 M1887</span><span>Mythic</span></div>
-<div class="weapon"><span>🔥 M1014</span><span>Ultra</span></div>
+<div class="weapon"><span>💥 AWM</span><span>Heroic</span></div>
+<div class="weapon"><span>🚀 SCAR</span><span>Elite</span></div>
+
+</div>
+
+<div class="panel">
+
+<h2 class="section-title">🎁 Daily Rewards</h2>
+
+<div class="rewards">
+
+<div class="reward">💎<br>100</div>
+<div class="reward">🪙<br>500</div>
+<div class="reward">🎟️<br>Pass</div>
+
+</div>
+
+</div>
+
+<div class="music">🎵</div>
+
+<div class="footer">
+Made by Krushna • FF Lobby UI Demo
 </div>
 
 <script>
-function scan(){
-let uid=document.getElementById("uid").value;
-if(uid==""){alert("Enter UID");return;}
-document.getElementById("status").style.display="block";
+function startDemo(){
+const uid=document.getElementById("uid").value.trim();
+const server=document.getElementById("server").value;
+
+if(uid===""){
+alert("Enter UID");
+return;
 }
+
+document.getElementById("status").style.display="block";
+document.getElementById("info").innerHTML=
+"UID: "+uid+"<br>Server: "+server+"<br>Status: Demo Loaded";
+}
+
+setTimeout(()=>{
+const p=document.getElementById("popup");
+p.style.display="block";
+setTimeout(()=>p.style.display="none",2500);
+},800);
 
 const canvas=document.getElementById("bg");
 const ctx=canvas.getContext("2d");
@@ -88,32 +312,31 @@ canvas.width=innerWidth;
 canvas.height=innerHeight;
 }
 resize();
-window.onresize=resize;
+addEventListener("resize",resize);
 
-let p=[];
-for(let i=0;i<70;i++){
-p.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*3+1,v:Math.random()+0.3});
+const particles=[];
+for(let i=0;i<90;i++){
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+r:Math.random()*3+1,
+v:Math.random()*1.2+0.3
+});
 }
 
 function draw(){
 ctx.clearRect(0,0,canvas.width,canvas.height);
 ctx.fillStyle="#00e5ff";
-for(let a of p){
+for(let p of particles){
 ctx.beginPath();
-ctx.arc(a.x,a.y,a.r,0,Math.PI*2);
+ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
 ctx.fill();
-a.y-=a.v;
-if(a.y<0)a.y=canvas.height;
+p.y-=p.v;
+if(p.y<0)p.y=canvas.height;
 }
 requestAnimationFrame(draw);
 }
 draw();
-
-setTimeout(()=>{
-const popup=document.getElementById("popup");
-popup.style.display="block";
-setTimeout(()=>popup.style.display="none",2500);
-},1000);
 </script>
 
 </body>

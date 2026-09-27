@@ -2,591 +2,1190 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Krushna Markawar Official Website</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>Krushna Markawar | Official Creator Hub</title>
+
+<meta name="description" content="Krushna Markawar Official Creator Hub - CapCut Templates, AI Video Ideas, AI Image Prompts and Creator Tools.">
 
 <style>
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  -webkit-tap-highlight-color:transparent;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
 body{
-margin:0;
-background:#040611;
-color:#fff;
-font-family:Arial,sans-serif;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#030712;
+  color:#fff;
+  overflow-x:hidden;
+  min-height:100vh;
 }
-header{
-position:sticky;
-top:0;
-z-index:10;
-padding:14px 5%;
-display:flex;
-align-items:center;
-justify-content:space-between;
-background:#050711ee;
-backdrop-filter:blur(15px);
-border-bottom:1px solid #26365d;
+
+button,
+a,
+input{
+  font:inherit;
 }
-.logo{display:flex;align-items:center;gap:9px;font-weight:bold}
-.km{
-width:40px;height:40px;
-display:flex;align-items:center;justify-content:center;
-border-radius:12px;
-background:linear-gradient(135deg,#8b4dff,#258cff);
-font-weight:900;
-box-shadow:0 0 25px #7040ff88;
+
+button,
+a{
+  touch-action:manipulation;
 }
-.brand{font-size:18px}
-.brand span{color:#a56cff}
-nav{display:flex;gap:20px}
-nav a{color:#ccd5ec;text-decoration:none;font-size:14px}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+/* BACKGROUND */
+
+body::before{
+  content:"";
+  position:fixed;
+  width:500px;
+  height:500px;
+  top:-250px;
+  left:-180px;
+  background:#4f46e5;
+  opacity:.15;
+  filter:blur(100px);
+  border-radius:50%;
+  pointer-events:none;
+  z-index:-2;
+}
+
+body::after{
+  content:"";
+  position:fixed;
+  width:450px;
+  height:450px;
+  right:-200px;
+  top:300px;
+  background:#06b6d4;
+  opacity:.12;
+  filter:blur(100px);
+  border-radius:50%;
+  pointer-events:none;
+  z-index:-2;
+}
+
+/* HEADER */
+
+.header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  width:100%;
+  background:rgba(3,7,18,.88);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.nav{
+  width:min(1180px,94%);
+  min-height:70px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  min-width:0;
+}
+
+.logo{
+  width:42px;
+  height:42px;
+  border-radius:13px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+  font-weight:900;
+  background:linear-gradient(135deg,#7c3aed,#2563eb,#06b6d4);
+  box-shadow:0 0 25px rgba(99,102,241,.45);
+  flex-shrink:0;
+}
+
+.brand-text{
+  min-width:0;
+}
+
+.brand-name{
+  font-size:15px;
+  font-weight:800;
+  white-space:nowrap;
+}
+
+.brand-sub{
+  color:#8490a8;
+  font-size:9px;
+  margin-top:3px;
+  letter-spacing:.8px;
+}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:7px;
+}
+
+.nav-links a{
+  color:#aeb7ca;
+  padding:10px 13px;
+  border-radius:10px;
+  font-size:13px;
+  transition:.2s;
+}
+
+.nav-links a:hover,
+.nav-links a:active{
+  color:#fff;
+  background:rgba(99,102,241,.15);
+}
+
+.menu-btn{
+  display:none;
+  border:1px solid rgba(255,255,255,.12);
+  background:#0b1220;
+  color:#fff;
+  width:43px;
+  height:43px;
+  border-radius:12px;
+  cursor:pointer;
+  font-size:21px;
+}
+
+/* MOBILE MENU */
+
+.mobile-menu{
+  display:none;
+  padding:8px 3%;
+  border-top:1px solid rgba(255,255,255,.06);
+}
+
+.mobile-menu.show{
+  display:block;
+}
+
+.mobile-menu a{
+  display:block;
+  padding:14px;
+  border-radius:12px;
+  color:#cbd5e1;
+  margin-bottom:4px;
+}
+
+.mobile-menu a:active{
+  background:#111b30;
+}
+
+/* MAIN */
+
+.container{
+  width:min(1180px,94%);
+  margin:auto;
+}
 
 .hero{
-max-width:1200px;
-margin:auto;
-padding:70px 5% 40px;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:35px;
-align-items:center;
+  min-height:590px;
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  align-items:center;
+  gap:50px;
+  padding:65px 0 45px;
 }
+
 .badge{
-display:inline-block;
-padding:9px 14px;
-border:1px solid #40598d;
-border-radius:30px;
-background:#0b1730;
-font-size:12px;
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  padding:8px 12px;
+  border:1px solid rgba(99,102,241,.35);
+  background:rgba(99,102,241,.1);
+  border-radius:999px;
+  color:#c4b5fd;
+  font-size:11px;
+  margin-bottom:20px;
 }
-h1{
-font-size:clamp(38px,6vw,65px);
-line-height:1.02;
-margin:20px 0;
+
+.hero h1{
+  font-size:clamp(42px,6vw,78px);
+  line-height:.98;
+  letter-spacing:-3px;
+  margin-bottom:24px;
 }
-.gradient{
-background:linear-gradient(90deg,#9a67ff,#42a5ff);
--webkit-background-clip:text;
-color:transparent;
+
+.gradient-text{
+  background:linear-gradient(90deg,#a78bfa,#60a5fa,#22d3ee);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
 }
+
 .hero p{
-color:#aab5d0;
-line-height:1.7;
+  color:#9aa6bd;
+  line-height:1.8;
+  font-size:15px;
+  max-width:600px;
+  margin-bottom:27px;
 }
-.search{
-display:flex;
-margin-top:25px;
-border:1px solid #304b80;
-border-radius:15px;
-overflow:hidden;
-background:#081126;
+
+.search-wrap{
+  display:flex;
+  max-width:560px;
+  height:54px;
+  border:1px solid rgba(96,165,250,.25);
+  background:#071122;
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 10px 35px rgba(0,0,0,.25);
 }
-.search input{
-flex:1;
-min-width:0;
-padding:16px;
-border:0;
-outline:0;
-background:transparent;
-color:#fff;
+
+.search-wrap input{
+  flex:1;
+  min-width:0;
+  border:0;
+  outline:0;
+  padding:0 17px;
+  background:transparent;
+  color:#fff;
 }
-.search button{
-border:0;
-padding:0 22px;
-background:linear-gradient(135deg,#673cff,#398fff);
-color:#fff;
-font-size:20px;
+
+.search-wrap input::placeholder{
+  color:#65728a;
 }
-.visual{
-height:340px;
-border-radius:30px;
-display:flex;
-align-items:center;
-justify-content:center;
-position:relative;
-overflow:hidden;
-background:linear-gradient(145deg,#071326,#25105a,#05234b);
-border:1px solid #38558d;
-box-shadow:inset 0 0 80px #6c3dff22;
+
+.search-btn{
+  width:60px;
+  border:0;
+  background:linear-gradient(135deg,#7c3aed,#0ea5e9);
+  color:#fff;
+  cursor:pointer;
+  font-size:18px;
 }
-.visual:before{
-content:"";
-position:absolute;
-width:230px;height:230px;
-border-radius:50%;
-background:#793dff55;
-filter:blur(25px);
+
+.hero-visual{
+  position:relative;
+  min-height:390px;
+  border-radius:30px;
+  border:1px solid rgba(129,140,248,.22);
+  background:
+    radial-gradient(circle at 50% 40%,rgba(124,58,237,.55),transparent 38%),
+    linear-gradient(145deg,#111c42,#07142c 65%,#062d48);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  box-shadow:0 30px 90px rgba(37,99,235,.12);
 }
-.bigkm{
-position:relative;
-z-index:2;
-width:110px;height:110px;
-border-radius:30px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:32px;
-font-weight:900;
-background:linear-gradient(135deg,#8b4dff,#258cff);
-box-shadow:0 0 45px #7445ff99;
+
+.hero-visual::before{
+  content:"";
+  position:absolute;
+  inset:20px;
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:22px;
 }
+
+.stars{
+  position:absolute;
+  inset:0;
+  opacity:.7;
+  background-image:
+    radial-gradient(circle,#fff 1px,transparent 1px),
+    radial-gradient(circle,#67e8f9 1px,transparent 1px);
+  background-size:70px 70px,110px 110px;
+  background-position:10px 15px,40px 60px;
+}
+
+.km-big{
+  width:145px;
+  height:145px;
+  border-radius:38px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:48px;
+  font-weight:900;
+  background:linear-gradient(135deg,#7c3aed,#2563eb,#06b6d4);
+  box-shadow:
+    0 0 30px rgba(124,58,237,.7),
+    0 0 90px rgba(37,99,235,.35);
+  animation:float 4s ease-in-out infinite;
+  position:relative;
+  z-index:2;
+}
+
+.visual-label{
+  position:absolute;
+  bottom:28px;
+  text-align:center;
+  color:#b8c2d7;
+  font-size:12px;
+  letter-spacing:1px;
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-12px)}
+}
+
+/* SECTION */
 
 section{
-max-width:1200px;
-margin:auto;
-padding:25px 5%;
+  padding:55px 0;
 }
-.grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:15px;
+
+.section-head{
+  margin-bottom:25px;
 }
+
+.eyebrow{
+  color:#818cf8;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  margin-bottom:8px;
+}
+
+.section-head h2{
+  font-size:29px;
+  margin-bottom:9px;
+}
+
+.section-head p{
+  color:#8490a8;
+  font-size:14px;
+}
+
+/* FEATURE GRID */
+
+.feature-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+}
+
 .card{
-background:linear-gradient(145deg,#0c152b,#080d1a);
-border:1px solid #26365d;
-border-radius:18px;
-padding:18px;
+  background:linear-gradient(145deg,rgba(13,25,48,.95),rgba(5,14,29,.95));
+  border:1px solid rgba(148,163,184,.13);
+  border-radius:17px;
+  padding:20px;
+  transition:.25s;
 }
-.card h3{margin:10px 0 7px}
+
+.card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(99,102,241,.35);
+  box-shadow:0 18px 40px rgba(0,0,0,.25);
+}
+
+.feature-icon{
+  font-size:27px;
+  margin-bottom:16px;
+}
+
+.card h3{
+  font-size:16px;
+  margin-bottom:9px;
+}
+
 .card p{
-color:#aab5d0;
-font-size:13px;
-line-height:1.55;
+  color:#8490a8;
+  font-size:12px;
+  line-height:1.6;
+  min-height:40px;
 }
-.icon{font-size:28px}
+
 .btn{
-width:100%;
-padding:12px;
-margin-top:10px;
-border:0;
-border-radius:11px;
-background:linear-gradient(90deg,#573cff,#388fff);
-color:#fff;
-font-weight:bold;
-cursor:pointer;
-touch-action:manipulation;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:42px;
+  padding:0 16px;
+  border:0;
+  border-radius:11px;
+  background:linear-gradient(90deg,#6938ef,#0ea5e9);
+  color:#fff;
+  font-size:12px;
+  font-weight:700;
+  cursor:pointer;
+  transition:.2s;
 }
-.btn:active{transform:scale(.97)}
 
-.chips{
-display:flex;
-gap:9px;
-overflow:auto;
-padding:8px 0 18px;
+.btn:hover,
+.btn:active{
+  transform:scale(.97);
+  filter:brightness(1.12);
 }
-.chip{
-white-space:nowrap;
-padding:11px 17px;
-border-radius:12px;
-border:1px solid #2c4370;
-background:#0a1429;
-color:#dbe5ff;
-}
-.chip.active{background:#6b40e8}
 
-.templates{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:15px;
+.card .btn{
+  width:100%;
+  margin-top:16px;
 }
-.template{
-overflow:hidden;
-border-radius:16px;
-background:#091326;
-border:1px solid #24385e;
+
+/* CATEGORY */
+
+.categories{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-bottom:30px;
 }
-.thumb{
-height:145px;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-font-weight:900;
-font-size:19px;
-padding:15px;
-background:linear-gradient(145deg,#101d38,#7135ff,#228eff);
+
+.category{
+  min-height:40px;
+  padding:0 15px;
+  border-radius:999px;
+  border:1px solid #1e3353;
+  background:#071326;
+  color:#9aa6bd;
+  cursor:pointer;
+  font-size:12px;
 }
-.template-body{padding:14px}
-.small{color:#9eadd0;font-size:12px}
+
+.category.active,
+.category:active{
+  color:#fff;
+  border-color:#6d4aff;
+  background:linear-gradient(135deg,#6534e8,#2563eb);
+}
+
+/* TEMPLATE GRID */
+
+.template-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.template-card{
+  overflow:hidden;
+  padding:0;
+}
+
+.template-cover{
+  min-height:145px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  text-align:center;
+  font-size:18px;
+  font-weight:800;
+  background:linear-gradient(135deg,#4c1d95,#7c3aed,#0284c7);
+}
+
+.template-info{
+  padding:16px;
+}
+
+.template-info h3{
+  font-size:15px;
+  margin-bottom:6px;
+}
+
+.template-info p{
+  min-height:auto;
+  font-size:11px;
+}
+
+/* PROMPTS */
+
+.prompt-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+}
+
+.prompt-card{
+  display:flex;
+  flex-direction:column;
+}
+
+.prompt-card p{
+  flex:1;
+}
+
+.copy-btn{
+  width:100%;
+  margin-top:17px;
+}
+
+/* TOOLS */
+
+.tools-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+}
+
+.tool{
+  text-align:center;
+}
+
+.tool-icon{
+  font-size:32px;
+  margin-bottom:10px;
+}
+
+.tool h3{
+  margin-bottom:7px;
+}
+
+/* EMPTY */
+
+.empty{
+  display:none;
+  text-align:center;
+  padding:35px;
+  border:1px dashed #243553;
+  border-radius:16px;
+  color:#7f8ba1;
+}
+
+/* FOOTER */
 
 footer{
-margin-top:35px;
-padding:35px 5%;
-text-align:center;
-border-top:1px solid #1c2a46;
-color:#8e9cba;
+  border-top:1px solid rgba(255,255,255,.08);
+  padding:35px 0;
+  margin-top:30px;
 }
+
+.footer-inner{
+  width:min(1180px,94%);
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.footer-brand{
+  font-weight:800;
+}
+
+.footer-text{
+  color:#66738b;
+  font-size:11px;
+  margin-top:6px;
+}
+
+.footer-links{
+  display:flex;
+  gap:15px;
+  color:#7e8aa0;
+  font-size:12px;
+}
+
+/* TOAST */
 
 .toast{
-position:fixed;
-left:50%;
-bottom:25px;
-transform:translate(-50%,30px);
-padding:12px 18px;
-border-radius:12px;
-background:#101b31;
-border:1px solid #385483;
-opacity:0;
-pointer-events:none;
-transition:.25s;
-z-index:50;
-}
-.toast.show{
-opacity:1;
-transform:translate(-50%,0);
+  position:fixed;
+  left:50%;
+  bottom:25px;
+  transform:translate(-50%,120px);
+  background:#101a2c;
+  border:1px solid rgba(99,102,241,.4);
+  color:#fff;
+  padding:13px 18px;
+  border-radius:12px;
+  font-size:12px;
+  z-index:9999;
+  box-shadow:0 15px 40px rgba(0,0,0,.4);
+  transition:.3s;
+  pointer-events:none;
+  white-space:nowrap;
 }
 
-@media(max-width:850px){
-nav{display:none}
-.hero{grid-template-columns:1fr}
-.grid{grid-template-columns:repeat(2,1fr)}
-.templates{grid-template-columns:repeat(2,1fr)}
+.toast.show{
+  transform:translate(-50%,0);
 }
-@media(max-width:480px){
-header{padding:12px}
-.brand{font-size:15px}
-.hero{padding:45px 16px 25px}
-section{padding-left:16px;padding-right:16px}
-.grid{grid-template-columns:1fr}
-.templates{grid-template-columns:1fr 1fr}
-.thumb{height:115px;font-size:15px}
-.visual{height:240px}
-h1{font-size:36px}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+  .hero{
+    grid-template-columns:1fr;
+    gap:30px;
+    padding-top:42px;
+  }
+
+  .hero-visual{
+    min-height:330px;
+  }
+
+  .feature-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .prompt-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .tools-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .template-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:650px){
+
+  .nav{
+    min-height:62px;
+  }
+
+  .nav-links{
+    display:none;
+  }
+
+  .menu-btn{
+    display:block;
+  }
+
+  .container{
+    width:92%;
+  }
+
+  .hero{
+    min-height:auto;
+    padding:35px 0 20px;
+  }
+
+  .hero h1{
+    font-size:44px;
+    letter-spacing:-2px;
+  }
+
+  .hero p{
+    font-size:13px;
+  }
+
+  .hero-visual{
+    min-height:270px;
+    border-radius:22px;
+  }
+
+  .km-big{
+    width:110px;
+    height:110px;
+    border-radius:30px;
+    font-size:37px;
+  }
+
+  section{
+    padding:40px 0;
+  }
+
+  .section-head h2{
+    font-size:25px;
+  }
+
+  .feature-grid{
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+
+  .card{
+    padding:15px;
+    border-radius:14px;
+  }
+
+  .feature-icon{
+    font-size:23px;
+    margin-bottom:11px;
+  }
+
+  .card h3{
+    font-size:14px;
+  }
+
+  .card p{
+    font-size:11px;
+    line-height:1.5;
+  }
+
+  .template-grid{
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+
+  .template-cover{
+    min-height:110px;
+    font-size:14px;
+  }
+
+  .template-info{
+    padding:12px;
+  }
+
+  .template-info h3{
+    font-size:13px;
+  }
+
+  .template-info p{
+    font-size:10px;
+  }
+
+  .btn{
+    min-height:40px;
+    font-size:11px;
+    padding:0 10px;
+  }
+
+  .prompt-grid{
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+
+  .tools-grid{
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+
+  .categories{
+    overflow-x:auto;
+    flex-wrap:nowrap;
+    padding-bottom:5px;
+  }
+
+  .category{
+    flex-shrink:0;
+  }
+
+  .footer-inner{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .footer-links{
+    flex-wrap:wrap;
+  }
+}
+
+@media(max-width:390px){
+
+  .brand-sub{
+    display:none;
+  }
+
+  .hero h1{
+    font-size:38px;
+  }
+
+  .feature-grid,
+  .template-grid,
+  .prompt-grid,
+  .tools-grid{
+    grid-template-columns:1fr;
+  }
+
+  .template-cover{
+    min-height:135px;
+  }
+}
+
+/* REDUCE MOTION */
+
+@media(prefers-reduced-motion:reduce){
+  *,
+  *::before,
+  *::after{
+    animation:none!important;
+    transition:none!important;
+    scroll-behavior:auto!important;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<header>
-<div>
-<div class="logo">
-<div class="km">KM</div>
-<div class="brand">Krushna <span>Markawar</span></div>
-</div>
-</div>
+<header class="header">
 
-<nav>
-<a href="#home">Home</a>
-<a href="#templates">Templates</a>
-<a href="#ideas">AI Ideas</a>
-<a href="#tools">Tools</a>
-</nav>
+  <div class="nav">
+
+    <a href="#home" class="brand">
+      <div class="logo">KM</div>
+
+      <div class="brand-text">
+        <div class="brand-name">Krushna Markawar</div>
+        <div class="brand-sub">OFFICIAL CREATOR HUB</div>
+      </div>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#templates">Templates</a>
+      <a href="#ideas">AI Ideas</a>
+      <a href="#tools">Tools</a>
+    </nav>
+
+    <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu">
+      ☰
+    </button>
+
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home">🏠 Home</a>
+    <a href="#templates">🎬 Templates</a>
+    <a href="#ideas">💡 AI Ideas</a>
+    <a href="#tools">🛠️ Creator Tools</a>
+  </div>
+
 </header>
+
 
 <main id="home">
 
-<section class="hero">
+<div class="container">
+
+  <!-- HERO -->
 
-<div>
-<span class="badge">🔥 Official Website</span>
+  <section class="hero">
 
-<h1>
-Create. Edit.<br>
-<span class="gradient">Go Viral.</span>
-</h1>
-
-<p>
-Welcome to Krushna Markawar — a creator hub for CapCut
-templates, AI video ideas, image prompts and editing resources.
-</p>
-
-<div class="search">
-<input id="search" placeholder="Search templates..." 
-onkeydown="if(event.key==='Enter')searchItems()">
-<button onclick="searchItems()">⌕</button>
-</div>
-</div>
-
-<div class="visual">
-<div class="bigkm">KM</div>
-</div>
-
-</section>
-
-<section>
-
-<div class="grid">
-
-<div class="card">
-<div class="icon">✂️</div>
-<h3>CapCut Templates</h3>
-<p>Explore template categories for your edits.</p>
-<button class="btn" onclick="go('templates')">Explore →</button>
-</div>
-
-<div class="card">
-<div class="icon">🤖</div>
-<h3>AI Video Ideas</h3>
-<p>Ready-to-copy ideas for your next reel.</p>
-<button class="btn" onclick="go('ideas')">View Ideas →</button>
-</div>
-
-<div class="card">
-<div class="icon">🖼️</div>
-<h3>AI Image Prompts</h3>
-<p>Cinematic prompts for creative visuals.</p>
-<button class="btn" onclick="copyFirst()">Copy Prompt</button>
-</div>
-
-<div class="card">
-<div class="icon">🛠️</div>
-<h3>Creator Tools</h3>
-<p>Useful shortcuts for your editing workflow.</p>
-<button class="btn" onclick="go('tools')">Open Tools →</button>
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<h2>Browse by Category</h2>
-<p style="color:#aab5d0">Tap a category to explore resources.</p>
-
-<div class="chips">
-<button class="chip active" onclick="filter('all',this)">All</button>
-<button class="chip" onclick="filter('capcut',this)">🎬 CapCut</button>
-<button class="chip" onclick="filter('ai',this)">🤖 AI Ideas</button>
-<button class="chip" onclick="filter('reels',this)">🔥 Reels</button>
-<button class="chip" onclick="filter('tools',this)">🛠️ Tools</button>
-</div>
-
-</section>
-
-<section id="templates">
-
-<h2>🔥 CapCut Templates</h2>
-<p style="color:#aab5d0">Open a template category on CapCut.</p>
-
-<div class="templates" id="templateGrid"></div>
-
-</section>
-
-<section id="ideas">
-
-<h2>💡 AI Ideas & Prompts</h2>
-<p style="color:#aab5d0">Copy a prompt and use it in your AI tool.</p>
-
-<div class="grid">
-
-<div class="card prompt">
-<h3>🎥 Cinematic Video</h3>
-<p>
-A cinematic vertical video of a creator walking through rain
-at night, neon reflections, smooth camera movement,
-dramatic lighting, 9:16.
-</p>
-<button class="btn" onclick="copyPrompt(this)">Copy Prompt</button>
-</div>
-
-<div class="card prompt">
-<h3>👑 Dark Portrait</h3>
-<p>
-A premium dark cinematic portrait with blue and purple rim
-lighting, subtle smoke, sharp details and luxury creator aesthetic.
-</p>
-<button class="btn" onclick="copyPrompt(this)">Copy Prompt</button>
-</div>
-
-<div class="card prompt">
-<h3>🔥 Viral Reel</h3>
-<p>
-Fast-paced vertical reel with a powerful first-second hook,
-clean transitions, bold captions and energetic visual rhythm.
-</p>
-<button class="btn" onclick="copyPrompt(this)">Copy Prompt</button>
-</div>
-
-<div class="card prompt">
-<h3>🌅 Motivation</h3>
-<p>
-A cinematic sunrise motivation reel with a creator silhouette,
-warm light, slow motion and emotional atmosphere.
-</p>
-<button class="btn" onclick="copyPrompt(this)">Copy Prompt</button>
-</div>
-
-</div>
-
-</section>
-
-<section id="tools">
-
-<h2>🛠️ Quick Creator Tools</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>🎬 Text to Video</h3>
-<p>Turn an idea into a structured video concept.</p>
-<button class="btn" onclick="toast('Use the AI Ideas above ✨')">Open</button>
-</div>
-
-<div class="card">
-<h3>📱 Reels Format</h3>
-<p>Recommended format for Instagram Reels and Shorts.</p>
-<button class="btn" onclick="toast('1080 × 1920 — 9:16')">View Size</button>
-</div>
-
-<div class="card">
-<h3>🖼️ Image Prompt</h3>
-<p>Copy a ready-made cinematic image prompt.</p>
-<button class="btn" onclick="copyFirst()">Copy</button>
-</div>
-
-<div class="card">
-<h3>🎨 Editing Workflow</h3>
-<p>Idea → Footage → Edit → Captions → Export → Post.</p>
-<button class="btn" onclick="toast('Workflow: Idea → Edit → Post ✓')">View</button>
-</div>
-
-</div>
-
-</section>
-
-</main>
+    <div>
 
-<footer>
-👑 <b>Krushna Markawar Official Website</b>
-<br><br>
-<small>Creator Hub • Edit • Create • Go Viral • © 2026 Krushna Markawar</small>
-</footer>
-
-<div id="toast" class="toast"></div>
-
-<script>
-
-const data=[
-["Official Templates","CapCut Official",
-"https://www.capcut.com/explore/official-capcut"],
-["Featured Templates","CapCut Featured",
-"https://www.capcut.com/explore/CapCut-featured-templates"],
-["New Templates","CapCut New",
-"https://www.capcut.com/explore/CapCut-new-templates"],
-["Editing Templates","CapCut Editing",
-"https://www.capcut.com/explore/CapCut-editing-templates"],
-["Creative Templates","CapCut Creative",
-"https://www.capcut.com/explore/capcut-creative-templates"],
-["All Templates","CapCut Templates",
-"https://www.capcut.com/explore/all-capcut-templates"]
-];
+      <div class="badge">
+        🔥 Official Website
+      </div>
+
+      <h1>
+        Create.<br>
+        Edit.<br>
+        <span class="gradient-text">Go Viral.</span>
+      </h1>
+
+      <p>
+        Welcome to Krushna Markawar — a creator hub for
+        CapCut templates, AI video ideas, image prompts
+        and useful editing resources.
+      </p>
 
-function render(list=data){
+      <div class="search-wrap">
+        <input
+          id="searchInput"
+          type="search"
+          placeholder="Search templates, ideas, tools..."
+          autocomplete="off"
+        >
 
-const grid=document.getElementById("templateGrid");
+        <button
+          class="search-btn"
+          id="searchBtn"
+          type="button"
+          aria-label="Search">
+          🔎
+        </button>
+      </div>
 
-grid.innerHTML=list.map(x=>`
-<div class="template">
-<div class="thumb">${x[0]}</div>
-<div class="template-body">
-<b>${x[0]}</b>
-<br>
-<span class="small">✓ ${x[1]}</span>
-<button class="btn" onclick="openCapCut('${x[2]}')">
-Open in CapCut →
-</button>
-</div>
-</div>
-`).join("");
+    </div>
 
-}
 
-function go(id){
-document.getElementById(id).scrollIntoView({
-behavior:"smooth"
-});
-}
+    <div class="hero-visual">
 
-function filter(type,btn){
+      <div class="stars"></div>
 
-document.querySelectorAll(".chip")
-.forEach(x=>x.classList.remove("active"));
+      <div class="km-big">
+        KM
+      </div>
 
-btn.classList.add("active");
+      <div class="visual-label">
+        KRUSHNA MARKAWAR • CREATOR HUB
+      </div>
 
-render(data);
+    </div>
 
-go("templates");
-}
+  </section>
 
-function searchItems(){
 
-const q=document.getElementById("search")
-.value.toLowerCase();
+  <!-- FEATURE CARDS -->
 
-const result=data.filter(x=>
-x.join(" ").toLowerCase().includes(q)
-);
+  <section>
 
-render(result);
+    <div class="feature-grid">
 
-go("templates");
-}
+      <div class="card">
+        <div class="feature-icon">✂️</div>
+        <h3>CapCut Templates</h3>
+        <p>
+          Explore template categories for your edits.
+        </p>
+        <button class="btn" type="button" onclick="scrollToSection('templates')">
+          Explore →
+        </button>
+      </div>
 
-function openCapCut(url){
-window.open(url,"_blank");
-}
 
-function toast(message){
+      <div class="card">
+        <div class="feature-icon">🤖</div>
+        <h3>AI Video Ideas</h3>
+        <p>
+          Ready-to-copy ideas for your next reel.
+        </p>
+        <button class="btn" type="button" onclick="scrollToSection('ideas')">
+          View Ideas →
+        </button>
+      </div>
 
-const t=document.getElementById("toast");
 
-t.innerText=message;
-t.classList.add("show");
+      <div class="card">
+        <div class="feature-icon">🖼️</div>
+        <h3>AI Image Prompts</h3>
+        <p>
+          Cinematic prompts for creative visuals.
+        </p>
+        <button class="btn" type="button" onclick="scrollToSection('ideas')">
+          Copy Prompt
+        </button>
+      </div>
 
-clearTimeout(window.toastTimer);
 
-window.toastTimer=setTimeout(()=>{
-t.classList.remove("show");
-},1800);
+      <div class="card">
+        <div class="feature-icon">🛠️</div>
+        <h3>Creator Tools</h3>
+        <p>
+          Useful shortcuts for your editing workflow.
+        </p>
+        <button class="btn" type="button" onclick="scrollToSection('tools')">
+          Open Tools →
+        </button>
+      </div>
 
-}
+    </div>
 
-async function copyText(text){
+  </section>
 
-try{
-await navigator.clipboard.writeText(text);
-toast("Copied ✓");
-}catch(e){
 
-const area=document.createElement("textarea");
-area.value=text;
-document.body.appendChild(area);
-area.select();
-document.execCommand("copy");
-area.remove();
+  <!-- CATEGORIES -->
 
-toast("Copied ✓");
-}
+  <section>
 
-}
+    <div class="section-head">
+      <div class="eyebrow">Explore</div>
+      <h2>Browse by Category</h2>
+      <p>Tap a category to explore resources.</p>
+    </div>
 
-function copyPrompt(button){
+    <div class="categories">
 
-const text=button.parentElement
-.querySelector("p").innerText;
+      <button class="category active" data-filter="all" type="button">
+        All
+      </button>
 
-copyText(text);
+      <button class="category" data-filter="capcut" type="button">
+        🎬 CapCut
+      </button>
 
-button.innerText="Copied ✓";
+      <button class="category" data-filter="ai" type="button">
+        🤖 AI Ideas
+      </button>
 
-setTimeout(()=>{
-button.innerText="Copy Prompt";
-},1200);
+      <button class="category" data-filter="reels" type="button">
+        🔥 Reels
+      </button>
 
-}
+      <button class="category" data-filter="tools" type="button">
+        🛠️ Tools
+      </button>
 
-function copyFirst(){
+    </div>
 
-const p=document.querySelector(".prompt p");
+  </section>
 
-if(p)copyText(p.innerText);
 
-}
+  <!-- CAPCUT -->
 
-render();
+  <section id="templates">
 
-</script>
+    <div class="section-head">
+      <div class="eyebrow">Templates</div>
+      <h2>🔥 CapCut Templates</h2>
+      <p>Open a template category on CapCut.</p>
+    </div>
 
-</body>
-</html>
+
+    <div class="template-grid">
+
+
+      <article class="card template-card searchable" data-category="capcut">
+
+        <div class="template-cover">
+          Official Templates
+        </div>
+
+        <div class="template-info">
+          <h3>Official Templates</h3>
+          <p>✓ CapCut Official</p>
+
+          <button
+            class="btn capcut-btn"
+            type="button"
+            data-url="https://www.capcut.com/explore/official-capcut">
+            Open in CapCut →
+          </button>
+        </div>
+
+      </article>
+
+
+      <article class="card template-card searchable" data-category="capcut">
+
+        <div class="template-cover">
+          Featured Templates
+        </div>
+
+        <div class="template-info">
+          <h3>Featured Templates</h3>
+          <p>✓ CapCut Featured</p>
+
+          <button
+            class="btn capcut-btn"
+            type="button"
+            data-url="https://www.capcut.com/explore/CapCut-featured-templates">
+            Open in CapCut →
+          </button>
+        </div>
+
+      </article>
+
+
+      <article class="card template-card searchable" data-category="capcut">
+
+        <div class="template-cover">
+          New Templates
+        </div>
+
+        <div class="template-info">
+          <h3>New Templates</h3>
+          <p>✓ CapCut New</p>
+
+          <button
+            class="btn capcut-btn"
+            type="button"
+            data-url="https://www.capcut.com/explore/CapCut-new-templates">
+            Open in CapCut →
+          </button>
+        </div>
+
+      </article>
+
+
+      <article class="card template-card searchable" data-category="capcut">
+
+        <div class="template-cover">
+          Editing Templates
+        </div>
+
+        <div class="template-info">
+          <h3>Editing Templates</h3>
+          <p>✓ CapCut Editing</p>
+
+          <button
+            class="btn capcut-btn"
+            type="button"
+            data-url="https://www.capcut.com/explore/CapCut-editing-templates">
+            Open in CapCut →
+          </button>
+        </div>
+
+      </article>
+
+
+      <article class="card template-card searchable" data-category="capcut">
+
+        <div class="template-cover">
+          Creative Templates
+        </div>
+
+        <div class="template-info">
+          <h3>Creative Templates</h3>
+          <p>✓ CapCut Creative</p>
+
+          <button
+            class="btn capcut-btn"
+            type="button"
+            data-url="https://www.capcut.com/explore/capcut-creative-templates">
+            Open in CapCut →
+          </button>
+        </div>
+
+      </article>
+
+
+      <article class="card template-card searchable" data-category="capcut">
+
+        <div class="template-cover">
+          All Templates
+        </div>
+
+        <div class="template-info">
+          <h3>All Templates</h3>
+          <p>✓ CapCut Templates</p>
+
+          <button
+            class="btn capcut-btn"
+            type="button"
+            data-url="https://www.capcut.com/explore/all-capcut-templates">
+            Open in CapCut →
+          </button>
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- AI IDEAS -->
+
+  <section id="ideas">
+
+    <div class="section-head">
+      <div class="eyebrow">Artificial Intelligence</div>
+      <h2>💡 AI Ideas & Prompts</h2>
+      <p>Copy a prompt and use it in your AI tool.</p>
+    </div>
+
+
+    <div class="prompt-grid">
+
+
+      <article class="card prompt-card searchable" data-category="ai reels">
+
+        <div class="feature-icon">🎥</div>
+
+        <h3>Cinematic Video</h3>
+
+        <p>
+          A cinematic vertical video with dramatic lighting,
+          neon reflections, smooth camera movement,
+          realistic details and a premium creator aesthetic.
+          9:16 format.
+        </p>
+
+        <button
+          class="btn copy-btn"
+          type="button"
+          data-copy="Create a cinematic vertical video 

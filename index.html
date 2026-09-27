@@ -2,547 +2,590 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Krushna Markawar Official Website</title>
 
-<title>Krushna Markawar</title>
-
-  <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
-background:radial-gradient(circle at top,#04233f,#000);
+margin:0;
+background:#040611;
 color:#fff;
-overflow-x:hidden;
+font-family:Arial,sans-serif;
 }
-#bg{position:fixed;inset:0;z-index:-1}
-
-.topbar{
+header{
+position:sticky;
+top:0;
+z-index:10;
+padding:14px 5%;
 display:flex;
+align-items:center;
 justify-content:space-between;
-padding:18px;
-font-size:22px;
-font-weight:bold;
-color:#00e5ff;
-text-shadow:0 0 15px #00e5ff;
+background:#050711ee;
+backdrop-filter:blur(15px);
+border-bottom:1px solid #26365d;
 }
+.logo{display:flex;align-items:center;gap:9px;font-weight:bold}
+.km{
+width:40px;height:40px;
+display:flex;align-items:center;justify-content:center;
+border-radius:12px;
+background:linear-gradient(135deg,#8b4dff,#258cff);
+font-weight:900;
+box-shadow:0 0 25px #7040ff88;
+}
+.brand{font-size:18px}
+.brand span{color:#a56cff}
+nav{display:flex;gap:20px}
+nav a{color:#ccd5ec;text-decoration:none;font-size:14px}
 
-.profile{text-align:center;padding:20px}
-.avatar-ring{
-width:200px;height:200px;
+.hero{
+max-width:1200px;
 margin:auto;
-border-radius:50%;
-padding:8px;
-background:linear-gradient(45deg,#00e5ff,#0066ff,#00e5ff);
-animation:spin 8s linear infinite;
-box-shadow:0 0 35px #00e5ff;
+padding:70px 5% 40px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:35px;
+align-items:center;
 }
-.avatar{
-width:100%;height:100%;
-border-radius:50%;
-background:#051321;
+.badge{
+display:inline-block;
+padding:9px 14px;
+border:1px solid #40598d;
+border-radius:30px;
+background:#0b1730;
+font-size:12px;
+}
+h1{
+font-size:clamp(38px,6vw,65px);
+line-height:1.02;
+margin:20px 0;
+}
+.gradient{
+background:linear-gradient(90deg,#9a67ff,#42a5ff);
+-webkit-background-clip:text;
+color:transparent;
+}
+.hero p{
+color:#aab5d0;
+line-height:1.7;
+}
+.search{
+display:flex;
+margin-top:25px;
+border:1px solid #304b80;
+border-radius:15px;
+overflow:hidden;
+background:#081126;
+}
+.search input{
+flex:1;
+min-width:0;
+padding:16px;
+border:0;
+outline:0;
+background:transparent;
+color:#fff;
+}
+.search button{
+border:0;
+padding:0 22px;
+background:linear-gradient(135deg,#673cff,#398fff);
+color:#fff;
+font-size:20px;
+}
+.visual{
+height:340px;
+border-radius:30px;
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:90px;
-}
-.name{
-font-size:34px;
-margin-top:18px;
-color:#00e5ff;
-font-weight:bold;
-text-shadow:0 0 18px #00e5ff;
-}
-.rank{
-display:inline-block;
-margin-top:10px;
-padding:10px 20px;
-border-radius:25px;
-background:linear-gradient(90deg,#ffd700,#ff7b00);
-color:#000;
-font-weight:bold;
-box-shadow:0 0 20px gold;
-animation:pulse 1.5s infinite;
-}
-
-.level{
-max-width:320px;
-margin:22px auto;
-}
-.bar{
-height:15px;
-background:#123;
-border-radius:20px;
+position:relative;
 overflow:hidden;
+background:linear-gradient(145deg,#071326,#25105a,#05234b);
+border:1px solid #38558d;
+box-shadow:inset 0 0 80px #6c3dff22;
 }
-.fill{
-height:100%;
-width:82%;
-background:#00e5ff;
-box-shadow:0 0 20px #00e5ff;
-animation:xp 3s infinite alternate;
+.visual:before{
+content:"";
+position:absolute;
+width:230px;height:230px;
+border-radius:50%;
+background:#793dff55;
+filter:blur(25px);
 }
-
-.panel{
-margin:20px;
-padding:20px;
-border-radius:22px;
-background:rgba(0,0,0,.55);
-border:2px solid #00e5ff;
-box-shadow:0 0 25px #00e5ff55;
-backdrop-filter:blur(8px);
-}
-
-input,select{
-width:100%;
-padding:15px;
-margin:12px 0;
-background:#111;
-color:#fff;
-border:2px solid #00e5ff;
-border-radius:14px;
-}
-
-button{
-width:100%;
-padding:16px;
-border:none;
-border-radius:14px;
-font-size:19px;
-font-weight:bold;
-background:#00e5ff;
-color:#000;
-box-shadow:0 0 22px #00e5ff;
-transition:.3s;
-}
-button:hover{transform:scale(1.03)}
-
-#status{
-display:none;
-margin-top:15px;
-padding:15px;
-border-radius:12px;
-background:#07131f;
-border:1px solid #00e5ff;
-}
-
-.section-title{
-font-size:28px;
-margin-bottom:15px;
-color:#00e5ff;
-}
-
-.weapon{
+.bigkm{
+position:relative;
+z-index:2;
+width:110px;height:110px;
+border-radius:30px;
 display:flex;
-justify-content:space-between;
-padding:14px;
-margin:10px 0;
-border-radius:14px;
-border:1px solid #00e5ff;
-transition:.3s;
-}
-.weapon:hover{
-transform:translateY(-3px);
-box-shadow:0 0 18px #00e5ff;
+align-items:center;
+justify-content:center;
+font-size:32px;
+font-weight:900;
+background:linear-gradient(135deg,#8b4dff,#258cff);
+box-shadow:0 0 45px #7445ff99;
 }
 
-.rewards{
+section{
+max-width:1200px;
+margin:auto;
+padding:25px 5%;
+}
+.grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+}
+.card{
+background:linear-gradient(145deg,#0c152b,#080d1a);
+border:1px solid #26365d;
+border-radius:18px;
+padding:18px;
+}
+.card h3{margin:10px 0 7px}
+.card p{
+color:#aab5d0;
+font-size:13px;
+line-height:1.55;
+}
+.icon{font-size:28px}
+.btn{
+width:100%;
+padding:12px;
+margin-top:10px;
+border:0;
+border-radius:11px;
+background:linear-gradient(90deg,#573cff,#388fff);
+color:#fff;
+font-weight:bold;
+cursor:pointer;
+touch-action:manipulation;
+}
+.btn:active{transform:scale(.97)}
+
+.chips{
+display:flex;
+gap:9px;
+overflow:auto;
+padding:8px 0 18px;
+}
+.chip{
+white-space:nowrap;
+padding:11px 17px;
+border-radius:12px;
+border:1px solid #2c4370;
+background:#0a1429;
+color:#dbe5ff;
+}
+.chip.active{background:#6b40e8}
+
+.templates{
 display:grid;
 grid-template-columns:repeat(3,1fr);
-gap:12px;
+gap:15px;
 }
-.reward{
-padding:15px;
+.template{
+overflow:hidden;
 border-radius:16px;
-text-align:center;
-background:#07131f;
-border:1px solid #00e5ff;
-box-shadow:0 0 12px #00e5ff33;
+background:#091326;
+border:1px solid #24385e;
 }
-
-.music{
-position:fixed;
-right:18px;
-bottom:20px;
-width:55px;
-height:55px;
-border-radius:50%;
+.thumb{
+height:145px;
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:24px;
-background:#00e5ff;
-color:#000;
-box-shadow:0 0 18px #00e5ff;
-}
-
-.footer{
 text-align:center;
-padding:30px;
-color:#00e5ff;
+font-weight:900;
+font-size:19px;
+padding:15px;
+background:linear-gradient(145deg,#101d38,#7135ff,#228eff);
+}
+.template-body{padding:14px}
+.small{color:#9eadd0;font-size:12px}
+
+footer{
+margin-top:35px;
+padding:35px 5%;
+text-align:center;
+border-top:1px solid #1c2a46;
+color:#8e9cba;
 }
 
-#popup{
+.toast{
 position:fixed;
-top:80px;
 left:50%;
-transform:translateX(-50%);
-background:#00e5ff;
-color:#000;
-padding:12px 22px;
-border-radius:14px;
-font-weight:bold;
-display:none;
-box-shadow:0 0 25px #00e5ff;
-z-index:999;
+bottom:25px;
+transform:translate(-50%,30px);
+padding:12px 18px;
+border-radius:12px;
+background:#101b31;
+border:1px solid #385483;
+opacity:0;
+pointer-events:none;
+transition:.25s;
+z-index:50;
+}
+.toast.show{
+opacity:1;
+transform:translate(-50%,0);
 }
 
-@keyframes spin{to{transform:rotate(360deg)}}
-@keyframes pulse{50%{transform:scale(1.08)}}
-@keyframes xp{from{width:70%}to{width:95%}}
+@media(max-width:850px){
+nav{display:none}
+.hero{grid-template-columns:1fr}
+.grid{grid-template-columns:repeat(2,1fr)}
+.templates{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:480px){
+header{padding:12px}
+.brand{font-size:15px}
+.hero{padding:45px 16px 25px}
+section{padding-left:16px;padding-right:16px}
+.grid{grid-template-columns:1fr}
+.templates{grid-template-columns:1fr 1fr}
+.thumb{height:115px;font-size:15px}
+.visual{height:240px}
+h1{font-size:36px}
+}
 </style>
 </head>
 
 <body>
 
-<canvas id="bg"></canvas>
-
-<div class="topbar">
-  <div>💎 <span id="diamond">99999</span></div>
-  <div>🪙 <span id="coin">999999</span></div>
+<header>
+<div>
+<div class="logo">
+<div class="km">KM</div>
+<div class="brand">Krushna <span>Markawar</span></div>
+</div>
 </div>
 
-<div class="profile">
-  <div class="avatar-ring">
-    <div class="avatar">🥷</div>
-  </div>
+<nav>
+<a href="#home">Home</a>
+<a href="#templates">Templates</a>
+<a href="#ideas">AI Ideas</a>
+<a href="#tools">Tools</a>
+</nav>
+</header>
 
-  <div class="name">Krushna Markawar</div>
-  <div class="rank">🏆 HEROIC</div>
+<main id="home">
 
-  <div class="level">
-    Level 75
-    <div class="bar"><div class="fill"></div></div>
-  </div>
+<section class="hero">
+
+<div>
+<span class="badge">🔥 Official Website</span>
+
+<h1>
+Create. Edit.<br>
+<span class="gradient">Go Viral.</span>
+</h1>
+
+<p>
+Welcome to Krushna Markawar — a creator hub for CapCut
+templates, AI video ideas, image prompts and editing resources.
+</p>
+
+<div class="search">
+<input id="search" placeholder="Search templates..." 
+onkeydown="if(event.key==='Enter')searchItems()">
+<button onclick="searchItems()">⌕</button>
+</div>
 </div>
 
-<div class="panel">
-  <h2 class="section-title">🎮 Enter Lobby</h2>
-
-  <input id="uid" placeholder="Enter UID">
-
-  <select id="server">
-    <option>India</option>
-    <option>Singapore</option>
-    <option>Brazil</option>
-    <option>Europe</option>
-  </select>
-
-  <button onclick="startDemo()">START</button>
-
-  <div id="status">
-    <h3>✅ Lobby Ready</h3>
-    <p id="info"></p>
-  </div>
+<div class="visual">
+<div class="bigkm">KM</div>
 </div>
 
-<div class="panel">
-  <h2 class="section-title">📊 Player Stats</h2>
+</section>
 
-  <div class="rewards">
-    <div class="reward">🔥<br>1250 Kills</div>
-    <div class="reward">🏆<br>240 Wins</div>
-    <div class="reward">⭐<br>Level 75</div>
-  </div>
+<section>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">✂️</div>
+<h3>CapCut Templates</h3>
+<p>Explore template categories for your edits.</p>
+<button class="btn" onclick="go('templates')">Explore →</button>
 </div>
 
-<div class="panel">
-  <h2 class="section-title">🎒 Inventory</h2>
-
-  <div class="rewards">
-    <div class="reward">🎽<br>Skin</div>
-    <div class="reward">🐺<br>Pet</div>
-    <div class="reward">💃<br>Emote</div>
-    <div class="reward">🎒<br>Bag</div>
-    <div class="reward">🪂<br>Parachute</div>
-    <div class="reward">🚗<br>Vehicle</div>
-  </div>
-</div>
-  <!-- HEROIC CARD -->
-<div class="panel">
-  <h2 class="section-title">👑 Heroic Profile</h2>
-
-  <div style="text-align:center;padding:10px">
-    <div style="font-size:90px">🥷</div>
-    <h2 style="color:#00e5ff">Grand Heroic</h2>
-    <div class="rank">⭐ TOP 1%</div>
-  </div>
+<div class="card">
+<div class="icon">🤖</div>
+<h3>AI Video Ideas</h3>
+<p>Ready-to-copy ideas for your next reel.</p>
+<button class="btn" onclick="go('ideas')">View Ideas →</button>
 </div>
 
-<!-- WEAPON SHOWCASE -->
-<div class="panel">
-  <h2 class="section-title">🔥 Weapon Showcase</h2>
-
-  <div class="weapon"><span>🔫 AK47 Evo</span><span>Lv.7</span></div>
-  <div class="weapon"><span>⚡ MP40 Cobra</span><span>Legendary</span></div>
-  <div class="weapon"><span>🎯 M1887 One Tap</span><span>Mythic</span></div>
-  <div class="weapon"><span>💥 AWM Dragon</span><span>Heroic</span></div>
-  <div class="weapon"><span>🚀 SCAR Titan</span><span>Elite</span></div>
+<div class="card">
+<div class="icon">🖼️</div>
+<h3>AI Image Prompts</h3>
+<p>Cinematic prompts for creative visuals.</p>
+<button class="btn" onclick="copyFirst()">Copy Prompt</button>
 </div>
 
-<!-- INVENTORY -->
-<div class="panel">
-  <h2 class="section-title">🎒 Inventory</h2>
-
-  <div class="rewards">
-    <div class="reward">🎽<br>Skin</div>
-    <div class="reward">🐺<br>Pet</div>
-    <div class="reward">💃<br>Emote</div>
-    <div class="reward">🪂<br>Parachute</div>
-    <div class="reward">🚗<br>Vehicle</div>
-    <div class="reward">🎒<br>Bag</div>
-  </div>
-</div>
-
-<!-- DAILY MISSIONS -->
-<div class="panel">
-  <h2 class="section-title">🎯 Daily Missions</h2>
-
-  <div class="weapon"><span>🔥 Kill 20 Enemies</span><span>70%</span></div>
-  <div class="weapon"><span>🏆 Win 1 Match</span><span>Done</span></div>
-  <div class="weapon"><span>📦 Open 5 Crates</span><span>40%</span></div>
-</div>
-
-<!-- DAILY REWARDS -->
-<div class="panel">
-  <h2 class="section-title">🎁 Daily Rewards</h2>
-
-  <div class="rewards">
-    <div class="reward">💎<br>100</div>
-    <div class="reward">🪙<br>500</div>
-    <div class="reward">🎟️<br>Pass</div>
-  </div>
-</div>
-
-<!-- LEADERBOARD -->
-<div class="panel">
-  <h2 class="section-title">🏅 Leaderboard</h2>
-
-  <div class="weapon"><span>🥇 Krushna</span><span>9800 RP</span></div>
-  <div class="weapon"><span>🥈 Shadow</span><span>9650 RP</span></div>
-  <div class="weapon"><span>🥉 Ghost</span><span>9400 RP</span></div>
-</div>
-
-<div class="music">🎵</div>
-
-<div class="footer">
-  Made by Krushna • FF Lobby UI Demo
-</div>
-
-<div id="popup">🔥 BOOYAH • FF Lobby PRO V4</div>
-<!-- Weapon Showcase -->
-<div class="panel">
-  <h2 class="section-title">🔥 Weapon Showcase</h2>
-
-  <div class="weapon"><span>🔫 AK47</span><span>Epic</span></div>
-  <div class="weapon"><span>⚡ MP40</span><span>Legendary</span></div>
-  <div class="weapon"><span>🎯 M1887</span><span>Mythic</span></div>
-  <div class="weapon"><span>💥 AWM</span><span>Heroic</span></div>
-  <div class="weapon"><span>🚀 SCAR</span><span>Elite</span></div>
-</div>
-
-<!-- Daily Missions -->
-<div class="panel">
-  <h2 class="section-title">🎯 Daily Missions</h2>
-
-  <div class="weapon"><span>Kill 20 Enemies</span><span>70%</span></div>
-  <div class="weapon"><span>Play 3 Matches</span><span>Done</span></div>
-  <div class="weapon"><span>Open 5 Crates</span><span>40%</span></div>
-</div>
-
-<!-- Daily Rewards -->
-<div class="panel">
-  <h2 class="section-title">🎁 Daily Rewards</h2>
-
-  <div class="rewards">
-    <div class="reward">💎<br>100</div>
-    <div class="reward">🪙<br>500</div>
-    <div class="reward">🎟️<br>Pass</div>
-  </div>
-</div>
-
-<div class="music">🎵</div>
-
-<div class="footer">
-  Made by Krushna • FF Lobby UI Demo
-</div>
-
-<div id="popup">🔥 Welcome to FF Lobby PRO V3</div>
-<div class="panel">
-  <h2 class="section-title">🔥 Weapon Showcase</h2>
-
-  <div class="weapon"><span>🔫 AK47</span><span>Epic</span></div>
-  <div class="weapon"><span>⚡ MP40</span><span>Legendary</span></div>
-  <div class="weapon"><span>🎯 M1887</span><span>Mythic</span></div>
-  <div class="weapon"><span>💥 AWM</span><span>Heroic</span></div>
-  <div class="weapon"><span>🚀 SCAR</span><span>Elite</span></div>
-</div>
-
-<div class="panel">
-  <h2 class="section-title">🎯 Daily Missions</h2>
-
-  <div class="weapon"><span>Kill 20 Enemies</span><span>70%</span></div>
-  <div class="weapon"><span>Play 3 Matches</span><span>Done</span></div>
-  <div class="weapon"><span>Open 5 Crates</span><span>40%</span></div>
-</div>
-
-<div class="panel">
-  <h2 class="section-title">🎁 Daily Rewards</h2>
-
-  <div class="rewards">
-    <div class="reward">💎<br>100</div>
-    <div class="reward">🪙<br>500</div>
-    <div class="reward">🎟️<br>Pass</div>
-  </div>
-</div>
-
-<div class="music">🎵</div>
-
-<div class="footer">
-  Made by Krushna • FF Lobby UI Demo
-</div>
-
-<div id="popup">🔥 Welcome to FF Lobby PRO V2</div>
-
-<div class="topbar">
-<div>💎 99999</div>
-<div>🪙 999999</div>
-</div>
-
-<div class="profile">
-
-<div class="avatar-ring">
-<div class="avatar">🎮</div>
-</div>
-
-<div class="name">Krushna Markawar</div>
-<div class="rank">🏆 HEROIC</div>
-
-<div class="level">
-Level 75
-<div class="bar">
-<div class="fill"></div>
-</div>
+<div class="card">
+<div class="icon">🛠️</div>
+<h3>Creator Tools</h3>
+<p>Useful shortcuts for your editing workflow.</p>
+<button class="btn" onclick="go('tools')">Open Tools →</button>
 </div>
 
 </div>
 
-<div class="panel">
+</section>
 
-<h2 class="section-title">🎯 Enter Lobby</h2>
+<section>
 
-<input id="uid" placeholder="Enter UID">
+<h2>Browse by Category</h2>
+<p style="color:#aab5d0">Tap a category to explore resources.</p>
 
-<select id="server">
-<option>India</option>
-<option>Singapore</option>
-<option>Brazil</option>
-<option>Europe</option>
-</select>
+<div class="chips">
+<button class="chip active" onclick="filter('all',this)">All</button>
+<button class="chip" onclick="filter('capcut',this)">🎬 CapCut</button>
+<button class="chip" onclick="filter('ai',this)">🤖 AI Ideas</button>
+<button class="chip" onclick="filter('reels',this)">🔥 Reels</button>
+<button class="chip" onclick="filter('tools',this)">🛠️ Tools</button>
+</div>
 
-<button onclick="startDemo()">START</button>
+</section>
 
-<div id="status">
-<h3>✅ Demo Loaded</h3>
-<p id="info"></p>
+<section id="templates">
+
+<h2>🔥 CapCut Templates</h2>
+<p style="color:#aab5d0">Open a template category on CapCut.</p>
+
+<div class="templates" id="templateGrid"></div>
+
+</section>
+
+<section id="ideas">
+
+<h2>💡 AI Ideas & Prompts</h2>
+<p style="color:#aab5d0">Copy a prompt and use it in your AI tool.</p>
+
+<div class="grid">
+
+<div class="card prompt">
+<h3>🎥 Cinematic Video</h3>
+<p>
+A cinematic vertical video of a creator walking through rain
+at night, neon reflections, smooth camera movement,
+dramatic lighting, 9:16.
+</p>
+<button class="btn" onclick="copyPrompt(this)">Copy Prompt</button>
+</div>
+
+<div class="card prompt">
+<h3>👑 Dark Portrait</h3>
+<p>
+A premium dark cinematic portrait with blue and purple rim
+lighting, subtle smoke, sharp details and luxury creator aesthetic.
+</p>
+<button class="btn" onclick="copyPrompt(this)">Copy Prompt</button>
+</div>
+
+<div class="card prompt">
+<h3>🔥 Viral Reel</h3>
+<p>
+Fast-paced vertical reel with a powerful first-second hook,
+clean transitions, bold captions and energetic visual rhythm.
+</p>
+<button class="btn" onclick="copyPrompt(this)">Copy Prompt</button>
+</div>
+
+<div class="card prompt">
+<h3>🌅 Motivation</h3>
+<p>
+A cinematic sunrise motivation reel with a creator silhouette,
+warm light, slow motion and emotional atmosphere.
+</p>
+<button class="btn" onclick="copyPrompt(this)">Copy Prompt</button>
 </div>
 
 </div>
 
-<div class="panel">
+</section>
 
-<h2 class="section-title">🔥 Popular Weapons</h2>
+<section id="tools">
 
-<div class="weapon"><span>🔫 AK47</span><span>Epic</span></div>
-<div class="weapon"><span>⚡ MP40</span><span>Legendary</span></div>
-<div class="weapon"><span>🎯 M1887</span><span>Mythic</span></div>
-<div class="weapon"><span>💥 AWM</span><span>Heroic</span></div>
-<div class="weapon"><span>🚀 SCAR</span><span>Elite</span></div>
+<h2>🛠️ Quick Creator Tools</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>🎬 Text to Video</h3>
+<p>Turn an idea into a structured video concept.</p>
+<button class="btn" onclick="toast('Use the AI Ideas above ✨')">Open</button>
+</div>
+
+<div class="card">
+<h3>📱 Reels Format</h3>
+<p>Recommended format for Instagram Reels and Shorts.</p>
+<button class="btn" onclick="toast('1080 × 1920 — 9:16')">View Size</button>
+</div>
+
+<div class="card">
+<h3>🖼️ Image Prompt</h3>
+<p>Copy a ready-made cinematic image prompt.</p>
+<button class="btn" onclick="copyFirst()">Copy</button>
+</div>
+
+<div class="card">
+<h3>🎨 Editing Workflow</h3>
+<p>Idea → Footage → Edit → Captions → Export → Post.</p>
+<button class="btn" onclick="toast('Workflow: Idea → Edit → Post ✓')">View</button>
+</div>
 
 </div>
 
-<div class="panel">
+</section>
 
-<h2 class="section-title">🎁 Daily Rewards</h2>
+</main>
 
-<div class="rewards">
+<footer>
+👑 <b>Krushna Markawar Official Website</b>
+<br><br>
+<small>Creator Hub • Edit • Create • Go Viral • © 2026 Krushna Markawar</small>
+</footer>
 
-<div class="reward">💎<br>100</div>
-<div class="reward">🪙<br>500</div>
-<div class="reward">🎟️<br>Pass</div>
-
-</div>
-
-</div>
-
-<div class="music">🎵</div>
-
-<div class="footer">
-Made by Krushna • FF Lobby UI Demo
-</div>
+<div id="toast" class="toast"></div>
 
 <script>
-function startDemo(){
-const uid=document.getElementById("uid").value.trim();
-const server=document.getElementById("server").value;
 
-if(uid===""){
-alert("Enter UID");
-return;
+const data=[
+["Official Templates","CapCut Official",
+"https://www.capcut.com/explore/official-capcut"],
+["Featured Templates","CapCut Featured",
+"https://www.capcut.com/explore/CapCut-featured-templates"],
+["New Templates","CapCut New",
+"https://www.capcut.com/explore/CapCut-new-templates"],
+["Editing Templates","CapCut Editing",
+"https://www.capcut.com/explore/CapCut-editing-templates"],
+["Creative Templates","CapCut Creative",
+"https://www.capcut.com/explore/capcut-creative-templates"],
+["All Templates","CapCut Templates",
+"https://www.capcut.com/explore/all-capcut-templates"]
+];
+
+function render(list=data){
+
+const grid=document.getElementById("templateGrid");
+
+grid.innerHTML=list.map(x=>`
+<div class="template">
+<div class="thumb">${x[0]}</div>
+<div class="template-body">
+<b>${x[0]}</b>
+<br>
+<span class="small">✓ ${x[1]}</span>
+<button class="btn" onclick="openCapCut('${x[2]}')">
+Open in CapCut →
+</button>
+</div>
+</div>
+`).join("");
+
 }
 
-document.getElementById("status").style.display="block";
-document.getElementById("info").innerHTML=
-"UID: "+uid+"<br>Server: "+server+"<br>Status: Demo Loaded";
-}
-
-setTimeout(()=>{
-const p=document.getElementById("popup");
-p.style.display="block";
-setTimeout(()=>p.style.display="none",2500);
-},800);
-
-const canvas=document.getElementById("bg");
-const ctx=canvas.getContext("2d");
-
-function resize(){
-canvas.width=innerWidth;
-canvas.height=innerHeight;
-}
-resize();
-addEventListener("resize",resize);
-
-const particles=[];
-for(let i=0;i<90;i++){
-particles.push({
-x:Math.random()*canvas.width,
-y:Math.random()*canvas.height,
-r:Math.random()*3+1,
-v:Math.random()*1.2+0.3
+function go(id){
+document.getElementById(id).scrollIntoView({
+behavior:"smooth"
 });
 }
 
-function draw(){
-ctx.clearRect(0,0,canvas.width,canvas.height);
-ctx.fillStyle="#00e5ff";
-for(let p of particles){
-ctx.beginPath();
-ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-ctx.fill();
-p.y-=p.v;
-if(p.y<0)p.y=canvas.height;
+function filter(type,btn){
+
+document.querySelectorAll(".chip")
+.forEach(x=>x.classList.remove("active"));
+
+btn.classList.add("active");
+
+render(data);
+
+go("templates");
 }
-requestAnimationFrame(draw);
+
+function searchItems(){
+
+const q=document.getElementById("search")
+.value.toLowerCase();
+
+const result=data.filter(x=>
+x.join(" ").toLowerCase().includes(q)
+);
+
+render(result);
+
+go("templates");
 }
-draw();
+
+function openCapCut(url){
+window.open(url,"_blank");
+}
+
+function toast(message){
+
+const t=document.getElementById("toast");
+
+t.innerText=message;
+t.classList.add("show");
+
+clearTimeout(window.toastTimer);
+
+window.toastTimer=setTimeout(()=>{
+t.classList.remove("show");
+},1800);
+
+}
+
+async function copyText(text){
+
+try{
+await navigator.clipboard.writeText(text);
+toast("Copied ✓");
+}catch(e){
+
+const area=document.createElement("textarea");
+area.value=text;
+document.body.appendChild(area);
+area.select();
+document.execCommand("copy");
+area.remove();
+
+toast("Copied ✓");
+}
+
+}
+
+function copyPrompt(button){
+
+const text=button.parentElement
+.querySelector("p").innerText;
+
+copyText(text);
+
+button.innerText="Copied ✓";
+
+setTimeout(()=>{
+button.innerText="Copy Prompt";
+},1200);
+
+}
+
+function copyFirst(){
+
+const p=document.querySelector(".prompt p");
+
+if(p)copyText(p.innerText);
+
+}
+
+render();
+
 </script>
 
 </body>
